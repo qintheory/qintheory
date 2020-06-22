@@ -1781,11 +1781,6 @@
   font-family: 'Helveticaneue 01', sans-serif;
 }
 
-.paragraph-caption {
-  font-family: 'Helveticaneue 02', sans-serif;
-  text-align: center;
-}
-
 .grid {
   grid-row-gap: 16px;
 }
@@ -1815,7 +1810,7 @@
 
 .intro-text {
   margin: 20px;
-  font-family: 'Helveticaneue 05', sans-serif;
+  font-family: 'Helveticaneue 02', sans-serif;
   font-size: 16px;
   line-height: 30px;
   text-align: justify;
@@ -1845,21 +1840,15 @@
   text-decoration: overline;
 }
 
-.quote {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  padding-right: 40px;
-  padding-left: 40px;
-  font-family: 'Helveticaneue 04', sans-serif;
-  font-size: 22px;
-  line-height: 30px;
-  text-align: left;
-}
-
 .link-more {
+  display: block;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding-top: 20px;
   float: none;
-  font-family: 'Helveticaneue 09', sans-serif;
+  font-family: 'Helveticaneue 02', sans-serif;
   color: #333;
+  font-size: 18px;
   text-align: center;
   text-decoration: overline;
 }
@@ -1871,12 +1860,10 @@
 }
 
 .logo-box {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  display: -ms-grid;
+  display: grid;
+  margin-top: 40px;
+  margin-bottom: 60px;
   margin-left: 0px;
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
@@ -1921,6 +1908,10 @@
 .content-text-block {
   margin-top: 20px;
   margin-bottom: 20px;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  -ms-grid-row-align: stretch;
+  align-self: stretch;
   text-align: left;
 }
 
@@ -2094,6 +2085,12 @@
   text-align: justify;
 }
 
+.content-text.downloads {
+  padding-left: 60px;
+  font-family: 'Helveticaneue 12', sans-serif;
+  text-align: left;
+}
+
 .media-caption {
   display: block;
   margin-top: 10px;
@@ -2151,6 +2148,13 @@
 .contact-info {
   margin-top: 40px;
   font-family: 'Helveticaneue 02', sans-serif;
+}
+
+.intro-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
 }
 
 @media screen and (max-width: 991px) {
@@ -2328,13 +2332,12 @@
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
@@ -2349,6 +2352,7 @@
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
+    text-align: left;
   }
   .logo {
     margin-left: auto;
@@ -2367,8 +2371,9 @@
     width: 100px;
     margin-right: 0px;
   }
-  .bold-text {
-    text-align: center;
+  .image {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .contact-info {
     font-family: 'Helveticaneue 02', sans-serif;
@@ -2455,23 +2460,21 @@
     margin-left: 20px;
     font-size: 16px;
   }
-  .quote {
-    margin-right: 10px;
-    margin-left: 10px;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
   .link-more {
     margin-top: 20px;
     margin-bottom: 20px;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
   }
   .logo-box {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 0px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 60px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -2520,6 +2523,10 @@
   }
   .menu-button {
     background-color: #f6f6f6;
+  }
+  .image {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .contact-info {
     font-family: 'Helveticaneue 02', sans-serif;
