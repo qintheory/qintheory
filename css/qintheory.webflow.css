@@ -1787,10 +1787,6 @@
   grid-template-areas: "." "Area";
 }
 
-.details {
-  margin: 5px;
-}
-
 .lightbox-link {
   color: #333;
   text-align: center;
@@ -1991,7 +1987,7 @@
 }
 
 .logo {
-  margin-left: 15px;
+  margin-left: 35px;
 }
 
 .sublink {
@@ -2102,21 +2098,6 @@
   margin-left: 10px;
 }
 
-.details-box {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .content-text {
   margin-top: 10px;
   opacity: 1;
@@ -2128,7 +2109,7 @@
 
 .content-text.downloads {
   padding-left: 0px;
-  font-family: 'Helveticaneue 12', sans-serif;
+  font-family: 'Helveticaneue 02', sans-serif;
   color: #363263;
   text-align: left;
 }
@@ -2194,7 +2175,7 @@
 .contact-info {
   margin-top: 40px;
   font-family: 'Helveticaneue 02', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .intro-title {
@@ -2220,10 +2201,30 @@
   justify-content: space-between;
 }
 
+.contact-form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .text-field-message {
+  display: block;
   overflow: auto;
-  height: 500px;
+  height: 1900px;
   float: left;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  -ms-grid-row-align: auto;
+  align-self: auto;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   border: 1px none #000;
   border-radius: 10px;
   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.24);
@@ -2231,7 +2232,7 @@
 }
 
 .text-field {
-  width: 50%;
+  width: 100%;
   margin-right: 0px;
   border: 1px none #000;
   border-radius: 10px;
@@ -2255,7 +2256,7 @@
 }
 
 .select-field {
-  width: 50%;
+  width: 100%;
   border: 1px none #000;
   border-radius: 10px;
   background-color: hsla(0, 0%, 100%, 0.77);
@@ -2382,6 +2383,33 @@
   text-decoration: none;
 }
 
+.short-info {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.long-info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
+  margin-left: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
 @media screen and (max-width: 991px) {
   .section {
     position: relative;
@@ -2471,6 +2499,8 @@
     flex-direction: row;
   }
   .logo {
+    margin-top: 40px;
+    margin-left: 60px;
     float: left;
     text-align: center;
   }
@@ -2544,10 +2574,10 @@
     flex-direction: column;
   }
   .text-field {
-    width: 50%;
+    width: 100%;
   }
   .select-field {
-    width: 50%;
+    width: 100%;
   }
   .image-home {
     margin-top: 220px;
@@ -2623,7 +2653,7 @@
     text-align: left;
   }
   .logo {
-    margin-left: auto;
+    margin-left: 30px;
     text-align: center;
   }
   .sublink {
@@ -2655,6 +2685,11 @@
   }
   .contact-form {
     padding: 20px 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     font-family: 'Helveticaneue 05', sans-serif;
   }
   .text-field-message {
@@ -2688,6 +2723,9 @@
   .project {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+  .long-info {
+    height: 300px;
   }
 }
 
@@ -2829,6 +2867,10 @@
     right: 0%;
     bottom: auto;
   }
+  .logo {
+    margin-top: 0px;
+    margin-left: 0px;
+  }
   .logo-container {
     padding-left: 0px;
   }
@@ -2849,6 +2891,7 @@
     margin-top: 20px;
     margin-bottom: 30px;
     font-family: 'Helveticaneue 02', sans-serif;
+    font-size: 16px;
   }
   .container-home {
     -webkit-box-orient: vertical;
