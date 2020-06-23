@@ -1702,9 +1702,6 @@
   top: 0%;
   right: 0%;
   bottom: 0%;
-  display: -webkit-block;
-  display: -webkit-block;
-  display: -ms-block;
   display: block;
   margin-right: 40px;
   margin-left: 180px;
@@ -1773,10 +1770,10 @@
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   text-align: center;
 }
 
@@ -2096,6 +2093,21 @@
 .image {
   display: block;
   margin-top: 0px;
+}
+
+.details-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .content-text {
@@ -2758,6 +2770,8 @@
     justify-content: center;
   }
   .contact-info {
+    margin-top: 20px;
+    margin-bottom: 30px;
     font-family: 'Helveticaneue 02', sans-serif;
   }
   .container-home {
