@@ -1784,6 +1784,7 @@
 
 .grid {
   grid-row-gap: 16px;
+  grid-template-areas: "." "Area";
 }
 
 .details {
@@ -1893,21 +1894,22 @@
   grid-auto-columns: 1fr;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
-  -ms-grid-columns: 1fr 1fr;
+  grid-template-areas: "." "Area";
+  -ms-grid-columns: 1fr 16px 1fr;
   grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: auto auto;
-  grid-template-rows: auto auto;
+  -ms-grid-rows: auto 16px auto 16px auto;
+  grid-template-rows: auto auto auto;
 }
 
 .painting-details {
-  font-family: 'Helveticaneue 12', sans-serif;
+  font-family: 'Helveticaneue 05', sans-serif;
   color: #333;
   text-decoration: none;
   text-transform: none;
 }
 
 .painting-title {
-  font-family: 'Helveticaneue 12', sans-serif;
+  font-family: 'Helveticaneue 02', sans-serif;
   font-size: 18px;
 }
 
@@ -1976,7 +1978,7 @@
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  font-family: 'Helveticaneue 12', sans-serif;
+  font-family: 'Helveticaneue 05', sans-serif;
   font-size: 15px;
   text-align: left;
   text-decoration: none;
@@ -2075,8 +2077,7 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 10px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -2093,6 +2094,12 @@
 .image {
   display: block;
   margin-top: 0px;
+}
+
+.painting {
+  margin-top: auto;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .details-box {
@@ -2129,8 +2136,12 @@
 .media-caption {
   display: block;
   margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
   padding-bottom: 10px;
-  font-family: 'Helveticaneue 05', sans-serif;
+  font-family: 'Helveticaneue 12', sans-serif;
+  font-size: 14px;
+  line-height: 15px;
 }
 
 .icon-box {
@@ -2198,6 +2209,11 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -2308,6 +2324,62 @@
 .error-message {
   background-color: transparent;
   color: #8b0606;
+}
+
+.project-details {
+  overflow: visible;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-family: 'Helveticaneue 05', sans-serif;
+  color: #333;
+  text-align: justify;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.project-date {
+  font-family: 'Helveticaneue 12', sans-serif;
+  font-size: 16px;
+}
+
+.read-more-content {
+  overflow: hidden;
+}
+
+.trigger-text {
+  font-family: 'Helveticaneue 02', sans-serif;
+  color: #363263;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.accordian-close {
+  overflow: hidden;
+  color: #363263;
+  cursor: pointer;
+}
+
+.home-media {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  text-align: center;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 991px) {
@@ -2613,6 +2685,10 @@
     -ms-flex-item-align: end;
     align-self: flex-end;
   }
+  .project {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -2863,7 +2939,7 @@
   }
 }
 
-#w-node-499eadf73859-0006d8e8 {
+#w-node-706c012c05e5-0006d8e8 {
   -webkit-align-self: auto;
   -ms-flex-item-align: auto;
   -ms-grid-row-align: auto;
@@ -2904,6 +2980,13 @@
 #w-node-5cf0af79ca0e-f004164f {
   -ms-grid-column-align: end;
   justify-self: end;
+}
+
+#w-node-87efb1006a35-2f8299cc {
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  -ms-grid-row-align: auto;
+  align-self: auto;
 }
 
 @font-face {
