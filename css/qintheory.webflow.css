@@ -1702,10 +1702,10 @@
   top: 0%;
   right: 0%;
   bottom: 0%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-block;
+  display: -webkit-block;
+  display: -ms-block;
+  display: block;
   margin-right: 40px;
   margin-left: 180px;
   padding-right: 20px;
