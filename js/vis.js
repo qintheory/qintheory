@@ -1,10 +1,10 @@
 var nodes = [];
 var nNodes = [];
 
-var width = 600,
+var width = 500,
     height = 600;
 
-d3.json("../data/data.json", function(links) {
+d3.json("data/data.json").then(function(links) {
     links.forEach(function(link) {
         if (nodes[link.source.name]){
             link.source = nodes[link.source.name] ;
@@ -24,33 +24,38 @@ d3.json("../data/data.json", function(links) {
             link.target = nodes[link.target.name] ;
         } 
     }); 
-    
-    
-    
-    var svg = d3.select("forum").append("svg")
+     
+    var svg = d3.select("forum")
+        .append("svg")
         .attr("width", width)
         .attr("height", height)
-    ;
+;
     
-    var simulation = d3.forceSimulation()
-        .force("charge", d3.forceManyBody().strength(-1800))
-        .force("center", d3.forceCenter(width / 2, height / 2))
-        .force("x", d3.forceX())
-        .force("y", d3.forceY())
-        .force("r", d3.forceRadial(300))
-        .alphaTarget(0.5)
-        .force("collide", d3.forceCollide().radius(20
-        ))
-        .force("link", d3.forceLink(links).distance(20))
-        .on("tick", tick);
+        // forces
+    var r = d3.forceRadial(180),
+        x = d3.forceX(width),
+        y = d3.forceY(height),
+        charge = d3.forceCollide().radius(-10),
+        attract = d3.forceManyBody().strength(2),
+        center = d3.forceCenter(width/2, height/2),
+        collide = d3.forceCollide().radius(60).iterations(6),
+        link = d3.forceLink(links).distance(20);
+     
+    var simulation = d3.forceSimulation(nNodes).alphaTarget(0.5).velocityDecay(0.6)
+        .force("charge", charge)
+        .force("r", r)
+//        .force("x", x)
+//        .force("y", y)
+        .force("collide", collide)
+        .force("center", center)
+        .force("link", link);
     
-    
-    simulation.nodes(nNodes);
-    simulation.force("link").links(links);
+    simulation.on("tick", tick);
 
+    // create tear drop shape
     var path = svg.append("g").selectAll("path")
         .data(links)
-      .enter().append("path")
+        .enter().append("path")
        .style("fill", "#363263")
         .style("opacity", "0.5")
         .attr("class", "link").attr("marker-end", "url(#end)");
@@ -60,30 +65,30 @@ d3.json("../data/data.json", function(links) {
       .enter().append("circle")
         .attr("r", 20)
         .style("opacity", 0)
-    .call(d3.drag()
+        .call(d3.drag()
           .on("start", dragstarted)
           .on("drag", dragged)
           .on("end", dragended));
 
     var text = svg.append("g").selectAll("text")
         .data(nNodes)
-      .enter().append("text")
+        .enter().append("text")
         .attr("x", 3)
         .attr("y", ".3em")
-        .style("font-size", function(d){return (d.name.size+1) * 15})
+        .style("font-size", function(d){return (d.name.size+2) * 15})
         .style("fill", "#333333")
-        .style("opacity", 0.5)
+        .style("opacity", 0.6)
         .text(function(d) { return d.name.name; });
-
-//        
+       
     function tick() {
-      path.attr("d", function(d){
+        path.attr("d", function(d){
                                  return linkArc(d);
                                 });
-      node.attr("transform", transform);
-      text.attr("transform", transform);
+        node.attr("transform", transform);
+        text.attr("transform", transform);
     }
 
+// creation of tear drop shapes
     function linkArc(d) {
       var dx = parseFloat(d.target.x) - parseFloat(d.source.x);
       var dy = parseFloat(d.target.y) - parseFloat(d.source.y);
@@ -105,28 +110,9 @@ d3.json("../data/data.json", function(links) {
         }
         
         var r = 65,
-      l = Math.sqrt(dx * dx + r * r);   
-        
-        // return "M" + d.source.x + " " + d.source.y + "A" + l + "," + l + " 0 0,1 " + d.target.x + "," + d.target.y;
-        
-        // return "M" + d.target.x + " " + d.target.y + "Q" + xPad + " " + yPad+ ", " + d.source.x + " "+ yPad  + ", " + "T" + d.target.x + " " + d.target.y;  //
-        
-        // NEW CODE COMES HERE //
-        
-        // set up a tearWidth parameter to make the tear wider or narrower
+        l = Math.sqrt(dx * dx + r * r);   
         let tearWidth = 1.11;
-        
-        // 
         let path = 
-        // "M" + d.target.x + " " + d.target.y + 
-        // "Q" + xPad + " " + yPad+ ", " + d.source.x + " "+ yPad  + ", " + 
-        // "T" + d.target.x + " " + d.target.y; 
-        
-        // M - start drawing from the top of the drop (target.x, target.y)
-        // Q - draw a quadratic curve Q. This function requires two pairs of coordinates - the first pair is the control point on how spread the line should be, the second pair is the end of the curve. In our case the end of the curve is source.x, source.y.
-        // T - looks at the previous control point used and infers a new one, ending up at the top of the drop.
-        // Z - closes the drawing of the path
-            
         `M ${d.target.x} ${d.target.y}, 
         Q ${xPad*tearWidth} ${yPad*tearWidth}, ${d.source.x} ${d.source.y}, 
         T ${d.target.x} ${d.target.y},
@@ -138,11 +124,13 @@ d3.json("../data/data.json", function(links) {
     function transform(d) {
       return "translate(" + d.x + "," + d.y + ")";
     }
-    
-     
-    
+})
+.catch(function(error){
+    console.log("error")
 });
 
+
+// drag functions
 function dragstarted(d) {
   d3.select(this).raise().classed("active", true);
 }
