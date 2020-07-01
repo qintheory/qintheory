@@ -1804,7 +1804,7 @@
 }
 
 .description {
-  font-family: 'Helveticaneue 12', sans-serif;
+  font-family: 'Helveticaneue 09', sans-serif;
   font-size: 16px;
   line-height: 26px;
   text-align: left;
@@ -2105,7 +2105,7 @@
 .content-text {
   margin-top: 10px;
   opacity: 1;
-  font-family: 'Helveticaneue 05', sans-serif;
+  font-family: 'PT Serif', serif;
   font-size: 16px;
   line-height: 32px;
   text-align: justify;
@@ -2336,10 +2336,8 @@
 
 .project-details {
   overflow: visible;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
-  font-family: 'Helveticaneue 05', sans-serif;
+  margin: 20px 10px;
+  font-family: 'PT Serif', serif;
   color: #333;
   text-align: justify;
   text-decoration: none;
@@ -2519,7 +2517,9 @@
     margin-left: 0px;
   }
   .description {
-    font-family: 'Helveticaneue 12', sans-serif;
+    margin-bottom: 20px;
+    float: none;
+    font-family: 'Helveticaneue 09', sans-serif;
   }
   .intro-text {
     margin-top: 40px;
@@ -2658,6 +2658,9 @@
     -webkit-align-self: flex-end;
     -ms-flex-item-align: end;
     align-self: flex-end;
+  }
+  .project-date {
+    font-family: 'Helveticaneue 09', sans-serif;
   }
   .section-footer {
     position: relative;
