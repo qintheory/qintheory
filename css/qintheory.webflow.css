@@ -1783,6 +1783,10 @@
 }
 
 .grid {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: start;
   -webkit-align-items: start;
   -ms-flex-align: start;
@@ -1805,7 +1809,7 @@
 
 .description {
   font-family: 'Helveticaneue 09', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 26px;
   text-align: left;
 }
@@ -2105,7 +2109,7 @@
 .content-text {
   margin-top: 10px;
   opacity: 1;
-  font-family: 'PT Serif', serif;
+  font-family: 'Helveticaneue 05', sans-serif;
   font-size: 16px;
   line-height: 32px;
   text-align: justify;
@@ -2337,7 +2341,7 @@
 .project-details {
   overflow: visible;
   margin: 20px 10px;
-  font-family: 'PT Serif', serif;
+  font-family: 'Helveticaneue 05', sans-serif;
   color: #333;
   text-align: justify;
   text-decoration: none;
@@ -2520,6 +2524,7 @@
     margin-bottom: 20px;
     float: none;
     font-family: 'Helveticaneue 09', sans-serif;
+    font-size: 14px;
   }
   .intro-text {
     margin-top: 40px;
@@ -2658,6 +2663,9 @@
     -webkit-align-self: flex-end;
     -ms-flex-item-align: end;
     align-self: flex-end;
+  }
+  .project-details {
+    font-family: 'Helveticaneue 05', sans-serif;
   }
   .project-date {
     font-family: 'Helveticaneue 09', sans-serif;
@@ -2891,7 +2899,7 @@
     flex-direction: column;
   }
   .description {
-    font-family: 'Helveticaneue 9', sans-serif;
+    font-family: 'Helveticaneue 09', sans-serif;
   }
   .intro-text {
     max-width: 100%;
